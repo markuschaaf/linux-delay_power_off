@@ -15,9 +15,14 @@ $ git clone 'https://github.com/markuschaaf/linux-delay_power_off.git'
 $ cd linux-delay_power_off
 $ sudo make dkms-install
 ```
-Or if you are using an Arch-like distribution:
+If and how to load the module depends on your distribution. It is
+probably best to add it to initrd. If you are using an
+Arch-like distribution:
 ```console
 ...
 $ make PKGBUILD
 $ makepkg -si
+$ sudo modprobe delay_power_off
+$ sudoedit /etc/mkinitcpio.conf # add MODULES=(... delay_power_off)
+$ sudo mkinitcpio -P
 ```

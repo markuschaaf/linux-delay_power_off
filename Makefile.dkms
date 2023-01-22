@@ -1,0 +1,6 @@
+KVER ?= $(shell uname -r)
+KSRC ?= /lib/modules/$(KVER)/build
+obj-m += delay_power_off.o
+.PHONY: modules clean
+modules clean:
+	make -C '$(KSRC)' M='$(PWD)' $@

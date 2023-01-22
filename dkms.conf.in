@@ -1,0 +1,6 @@
+PACKAGE_NAME="delay_power_off"
+PACKAGE_VERSION="@@DPO_VERSION@@"
+MAKE="make KVER='$kernelver' KSRC='$kernel_source_dir'"
+BUILT_MODULE_NAME[0]="delay_power_off"
+DEST_MODULE_LOCATION[0]="/kernel/kernel"
+AUTOINSTALL="yes"

@@ -1,0 +1,13 @@
+pkgname=linux-delay_power_off-dkms
+pkgver=@@DPO_VERSION@@
+pkgrel=1
+pkgdesc='@@DPO_DESCRIPTION@@'
+arch=(any)
+license=(GPL)
+depends=(dkms)
+source=(delay_power_off.c dkms.conf.in Makefile Makefile.dkms)
+
+package() {
+    make DESTDIR=$pkgdir install-src
+}
+
